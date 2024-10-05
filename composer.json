@@ -1,5 +1,5 @@
 {
-  "name": "austinb/gameq",
+  "name": "enginegpdev/gameq",
   "description": "GameQ Gameserver Library",
   "keywords": [
     "gameq",
@@ -11,7 +11,7 @@
     {
       "name": "Austin Bischoff",
       "email": "austin.bischoff@gmail.com",
-      "role": "Packagist/Composer Maintainer, Developer",
+      "role": "Developer",
       "homepage": "https://github.com/Austinb"
     },
     {
@@ -46,11 +46,17 @@
       "email": "privat@skyraptor.eu",
       "role": "Developer",
       "homepage": "https://skyraptor.eu"
+    },
+    {
+      "name": "Sergei Solovev",
+      "email": "inbox@seansolovev.ru",
+      "role": "Packagist/Composer Maintainer, Developer",
+      "homepage": "https://github.com/SeAnSolovev"
     }
   ],
   "support": {
-    "source": "https://github.com/Austinb/GameQ/v3",
-    "issues": "https://github.com/Austinb/GameQ/issues",
+    "source": "https://github.com/EngineGPDev/GameQ/v3",
+    "issues": "https://github.com/EngineGPDev/GameQ/issues",
     "wiki": "https://github.com/Austinb/GameQ/wiki"
   },
   "require": {
