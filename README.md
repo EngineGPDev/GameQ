@@ -10,10 +10,10 @@ GameQ is a PHP library that allows you to query multiple types of multiplayer ga
 
 ## Installation
 #### [Composer](https://getcomposer.org/)
-This method assumes you already have composer [installed](https://getcomposer.org/doc/00-intro.md) and working properly. Add `enginegpdev/gameq` as a requirement to composer.json by using `composer require enginegpdev/gameq:~3.1` or by manually adding the following to the *composer.json* file in the **require** section:
+This method assumes you already have composer [installed](https://getcomposer.org/doc/00-intro.md) and working properly. Add `enginegp/gameq` as a requirement to composer.json by using `composer require enginegp/gameq:~3.1` or by manually adding the following to the *composer.json* file in the **require** section:
 
 ```javascript
-"enginegpdev/gameq": "~3.1"
+"enginegp/gameq": "~3.1"
 ```
 
 Update your packages with `composer update` or install with `composer install`.
