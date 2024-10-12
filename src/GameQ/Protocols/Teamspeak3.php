@@ -239,7 +239,7 @@ class Teamspeak3 extends Protocol
                     ' ',
                 ],
                 $value
-            ), "UTF-8");
+            ), "UTF-8", "ISO-8859-1");
         }
 
         return $properties;

@@ -147,7 +147,7 @@ class Quake3 extends Protocol
             // Add result
             $result->add(
                 trim($buffer->readString('\\')),
-                mb_convert_encoding(trim($buffer->readStringMulti(['\\', "\x0a"])), "UTF-8")
+                mb_convert_encoding(trim($buffer->readStringMulti(['\\', "\x0a"])), "UTF-8", "ISO-8859-1")
             );
         }
 
@@ -195,7 +195,7 @@ class Quake3 extends Protocol
             }
 
             // Add player name, encoded
-            $result->addPlayer('name', mb_convert_encoding(trim($buffer->readString('"')), "UTF-8"));
+            $result->addPlayer('name', mb_convert_encoding(trim($buffer->readString('"')), "UTF-8", "ISO-8859-1"));
 
             // Burn ending delimiter
             $buffer->read();

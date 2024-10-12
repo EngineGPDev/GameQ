@@ -182,7 +182,7 @@ class Gamespy2 extends Protocol
             if (strlen($key) == 0) {
                 break;
             }
-            $result->add($key, mb_convert_encoding($buffer->readString(), "UTF-8"));
+            $result->add($key, mb_convert_encoding($buffer->readString(), "UTF-8", "ISO-8859-1"));
         }
 
         unset($buffer);
@@ -256,7 +256,7 @@ class Gamespy2 extends Protocol
         // Get the values
         while ($buffer->getLength() > 4) {
             foreach ($varNames as $varName) {
-                $result->addSub($dataType, mb_convert_encoding($varName, "UTF-8"), mb_convert_encoding($buffer->readString(), "UTF-8"));
+                $result->addSub($dataType, mb_convert_encoding($varName, "UTF-8", "ISO-8859-1"), mb_convert_encoding($buffer->readString(), "UTF-8", "ISO-8859-1"));
             }
             if ($buffer->lookAhead() === "\x00") {
                 $buffer->skip();

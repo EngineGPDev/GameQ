@@ -723,7 +723,7 @@ class Ventrilo extends Protocol
 
                     // By default we just add they key as an item
                     default:
-                        $result->add($key, mb_convert_encoding($value, "UTF-8"));
+                        $result->add($key, mb_convert_encoding($value, "UTF-8", "ISO-8859-1"));
                         break;
                 }
             }
@@ -849,7 +849,7 @@ class Ventrilo extends Protocol
             // Split the key=value pair
             list($key, $value) = explode("=", $item, 2);
 
-            $result->addTeam(strtolower($key), mb_convert_encoding($value, "UTF-8"));
+            $result->addTeam(strtolower($key), mb_convert_encoding($value, "UTF-8", "ISO-8859-1"));
         }
     }
 
@@ -871,7 +871,7 @@ class Ventrilo extends Protocol
             // Split the key=value pair
             list($key, $value) = explode("=", $item, 2);
 
-            $result->addPlayer(strtolower($key), mb_convert_encoding($value, "UTF-8"));
+            $result->addPlayer(strtolower($key), mb_convert_encoding($value, "UTF-8", "ISO-8859-1"));
         }
     }
 }

@@ -80,10 +80,10 @@ class Killingfloor extends Unreal2
         $buffer->skip(1);
 
         // Read as a regular string since the length is incorrect (what we skipped earlier)
-        $result->add('servername', mb_convert_encoding($buffer->readString(), "UTF-8"));
+        $result->add('servername', mb_convert_encoding($buffer->readString(), "UTF-8", "ISO-8859-1"));
 
         // The rest is read as normal
-        $result->add('mapname', mb_convert_encoding($buffer->readPascalString(1), "UTF-8"));
+        $result->add('mapname', mb_convert_encoding($buffer->readPascalString(1), "UTF-8", "ISO-8859-1"));
         $result->add('gametype', $buffer->readPascalString(1));
         $result->add('numplayers', $buffer->readInt32());
         $result->add('maxplayers', $buffer->readInt32());
