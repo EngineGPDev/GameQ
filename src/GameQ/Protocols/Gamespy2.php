@@ -256,9 +256,11 @@ class Gamespy2 extends Protocol
         // Get the values
         while ($buffer->getLength() > 4) {
             foreach ($varNames as $varName) {
-                $result->addSub($dataType,
-                mb_convert_encoding($varName, "UTF-8", "ISO-8859-1"),
-                mb_convert_encoding($buffer->readString(), "UTF-8", "ISO-8859-1"));
+                $result->addSub(
+                    $dataType,
+                    mb_convert_encoding($varName, "UTF-8", "ISO-8859-1"),
+                    mb_convert_encoding($buffer->readString(), "UTF-8", "ISO-8859-1")
+                );
             }
             if ($buffer->lookAhead() === "\x00") {
                 $buffer->skip();
