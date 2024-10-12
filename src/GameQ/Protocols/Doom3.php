@@ -166,7 +166,7 @@ class Doom3 extends Protocol
         // Key / value pairs, delimited by an empty pair
         while ($buffer->getLength()) {
             $key = trim($buffer->readString());
-            $val = utf8_encode(trim($buffer->readString()));
+            $val = mb_convert_encoding(trim($buffer->readString()), "UTF-8", "ISO-8859-1");
 
             // Something is empty so we are done
             if (empty($key) && empty($val)) {
@@ -204,7 +204,7 @@ class Doom3 extends Protocol
             $result->addPlayer('ping', $buffer->readInt16());
             $result->addPlayer('rate', $buffer->readInt32());
             // Add player name, encoded
-            $result->addPlayer('name', utf8_encode(trim($buffer->readString())));
+            $result->addPlayer('name', mb_convert_encoding(trim($buffer->readString()), "UTF-8", "ISO-8859-1"));
 
             // Increment
             $playerCount++;

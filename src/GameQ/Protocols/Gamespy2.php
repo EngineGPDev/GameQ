@@ -27,8 +27,8 @@ use GameQ\Result;
  * GameSpy2 Protocol class
  *
  * Given the ability for non utf-8 characters to be used as hostnames, player names, etc... this
- * version returns all strings utf-8 encoded (utf8_encode).  To access the proper version of a
- * string response you must use utf8_decode() on the specific response.
+ * version returns all strings utf-8 encoded using mb_convert_encoding(). To access the proper version of a
+ * string response you must use mb_convert_encoding() to decode the specific response.
  *
  * @author Austin Bischoff <austin@codebeard.com>
  */
@@ -182,7 +182,7 @@ class Gamespy2 extends Protocol
             if (strlen($key) == 0) {
                 break;
             }
-            $result->add($key, utf8_encode($buffer->readString()));
+            $result->add($key, mb_convert_encoding($buffer->readString(), "UTF-8", "ISO-8859-1"));
         }
 
         unset($buffer);
@@ -256,7 +256,11 @@ class Gamespy2 extends Protocol
         // Get the values
         while ($buffer->getLength() > 4) {
             foreach ($varNames as $varName) {
-                $result->addSub($dataType, utf8_encode($varName), utf8_encode($buffer->readString()));
+                $result->addSub(
+                    $dataType,
+                    mb_convert_encoding($varName, "UTF-8", "ISO-8859-1"),
+                    mb_convert_encoding($buffer->readString(), "UTF-8", "ISO-8859-1")
+                );
             }
             if ($buffer->lookAhead() === "\x00") {
                 $buffer->skip();
