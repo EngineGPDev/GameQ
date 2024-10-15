@@ -1,6 +1,6 @@
 # GameQ Version 3
 [![CI](https://github.com/EngineGPDev/GameQ/actions/workflows/Tests.yml/badge.svg)](https://github.com/EngineGPDev/GameQ/actions/workflows/Tests.yml)
-[![License](https://img.shields.io/badge/license-LGPL-blue.svg?style=flat)](https://packagist.org/packages/austinb/gameq)
+[![License](https://img.shields.io/badge/license-LGPL-blue.svg?style=flat)](https://packagist.org/packages/enginegp/gameq)
 
 GameQ is a PHP library that allows you to query multiple types of multiplayer game & voice servers at the same time.
 
@@ -19,7 +19,7 @@ This method assumes you already have composer [installed](https://getcomposer.or
 Update your packages with `composer update` or install with `composer install`.
 
 #### Standalone Library
-Download the [latest version](https://github.com/Austinb/GameQ/releases) of the library and unpack it into your project.  Add the following to your bootstrap file:
+Download the [latest version](https://github.com/EngineGPDev/GameQ/releases) of the library and unpack it into your project.  Add the following to your bootstrap file:
 ```php
 require_once('/path/to/src/GameQ/Autoloader.php');
 ```
